@@ -1,0 +1,32 @@
+server:
+  port: 8080
+  compression:
+    enabled: true
+    mime-types: application/json,application/xml,text/html,text/xml,text/plain
+
+spring:
+  main:
+    banner-mode: "off"
+  application:
+    name: webflux-example
+  jmx:
+    enabled: false
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+      write-durations-as-timestamps: true
+
+info:
+  component: webflux-example
+  build:
+    version: '@project.version@'
+    name: '@project.name@'
+
+---
+spring:
+  profiles: default
+logging:
+  level:
+    com:
+      example:
+        flux: DEBUG
